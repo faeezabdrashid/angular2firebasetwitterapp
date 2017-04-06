@@ -6,7 +6,9 @@ import {HttpModule} from '@angular/http';
 import {AppComponent} from './app.component';
 import {MaterialModule} from '@angular/material';
 import 'hammerjs';
-import {AngularFireModule} from 'angularfire2';
+import {AngularFireModule, AuthProviders, AuthMethods} from 'angularfire2';
+import { LoginComponent } from './users/login/login.component';
+import { RegisterComponent } from './users/register/register.component';
 
 
 export const firebaseConfig = {
@@ -17,17 +19,24 @@ export const firebaseConfig = {
 	messagingSenderId: '365059843606'
 };
 
+const fbAuthConfig = {
+	provider: AuthProviders.Google,
+	method: AuthMethods.Password
+}
 
 @NgModule({
 	declarations: [
-		AppComponent
+		AppComponent,
+		LoginComponent,
+		RegisterComponent
 	],
+	entryComponents: [LoginComponent, RegisterComponent],
 	imports: [
 		BrowserModule,
 		FormsModule,
 		HttpModule,
 		MaterialModule,
-		AngularFireModule.initializeApp(firebaseConfig)
+		AngularFireModule.initializeApp(firebaseConfig, fbAuthConfig)
 	],
 	providers: [],
 	bootstrap: [AppComponent]
