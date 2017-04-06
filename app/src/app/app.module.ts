@@ -9,6 +9,7 @@ import 'hammerjs';
 import {AngularFireModule, AuthProviders, AuthMethods} from 'angularfire2';
 import { LoginComponent } from './users/login/login.component';
 import { RegisterComponent } from './users/register/register.component';
+import { AvatarComponent } from './shared/avatar/avatar.component';
 
 
 export const firebaseConfig = {
@@ -28,7 +29,8 @@ const fbAuthConfig = {
 	declarations: [
 		AppComponent,
 		LoginComponent,
-		RegisterComponent
+		RegisterComponent,
+		AvatarComponent
 	],
 	entryComponents: [LoginComponent, RegisterComponent],
 	imports: [

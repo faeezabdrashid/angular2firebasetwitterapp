@@ -4,6 +4,8 @@
 		<p>{{message}}</p>
 	</div>
 
+
+
 	<div class="form-group">
 		<md-input-container class="full-width">
 			<input mdInput type="text" name="firstName" placeholder="First Name" [(ngModel)]="user.firstName"/>
@@ -17,10 +19,9 @@
 		</md-input-container>
 	</div>
 
-	<div class="form-group">
-		<md-input-container class="full-width">
-			<input mdInput type="text" name="avatar" placeholder="Profile Picture URL" [(ngModel)]="user.avatar"/>
-		</md-input-container>
+	<div class="form-group form-avatar-control">
+		<label>Your profile Image: </label>
+		<avatar (onFileSelect)="onSelectProfileImage($event)"></avatar>
 	</div>
 
 

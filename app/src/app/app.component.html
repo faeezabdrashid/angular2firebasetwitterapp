@@ -13,7 +13,13 @@
 
 		<span class="app-toolbar-filler"></span>
 		<button md-button class="user-action-button login" (click)="login()" *ngIf="!userId">Login</button>
-		<button md-button class="user-action-button logout" (click)="logout()" *ngIf="userId">Sign Out</button>
+		<div class="user-profile" *ngIf="userId">
+			<span class="profile-image">
+				<img [src]="authProfile.photoURL" alt="Profile image" />
+				<button md-button class="user-action-button logout" (click)="logout()" *ngIf="userId">Sign Out</button>
+			</span>
+		</div>
+
 	</md-toolbar>
 
 	<div class="app-content">

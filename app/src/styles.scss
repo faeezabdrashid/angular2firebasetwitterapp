@@ -42,3 +42,23 @@ body {
 .full-width {
   width: 100%;
 }
+
+.user-profile {
+  .profile-image {
+    width: 20px;
+    height: 20px;
+    img {
+      width: 20px;
+      height: 20px;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      position: relative;
+      top: 5px;
+    }
+  }
+}
+
+.form-avatar-control {
+  margin-bottom: 10px;
+}
