@@ -24,12 +24,9 @@
 
 	<div class="app-content">
 
+		<tweets [sortBy]="'created'"></tweets>
 
-		<ul>
-			<li class="text" *ngFor="let item of items | async">
-				{{item.message}}
-			</li>
-		</ul>
+
 
 	</div>
 

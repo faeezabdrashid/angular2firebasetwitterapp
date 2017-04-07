@@ -62,3 +62,52 @@ body {
 .form-avatar-control {
   margin-bottom: 10px;
 }
+
+.app-content {
+  padding: 20px;
+  background-color: #FFFFFF;
+}
+
+.message {
+  &.error {
+    color: red;
+    border-left: 1px solid red;
+    padding: 10px;
+  }
+}
+
+.tweets {
+  .tweet-item {
+    .avatar {
+      width: 30px;
+      height: 30px;
+      float: left;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+    }
+    .tweet-message {
+      padding-left: 45px;
+      h4 {
+        font-size: 15px;
+        line-height: 1.5em;
+        margin: 0;
+        padding: 0;
+      }
+      p {
+        margin: 0;
+        padding: 5px 0;
+      }
+    }
+    &:before, &:after {
+      display: table;
+      content: '';
+    }
+    &:after {
+      clear: both;
+    }
+    border-bottom: 1px solid rgb(230, 236, 240);
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+  }
+}

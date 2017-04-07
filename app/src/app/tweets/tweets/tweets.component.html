@@ -1,0 +1,27 @@
+<div class="new-tweet">
+	<form #f="ngForm" (ngSubmit)="createTweet()">
+		<p *ngIf="errorMesage" class="message error">{{errorMesage}}</p>
+		<md-input-container class="full-width">
+			<textarea name="message" mdInput placeholder="What's happening?" [(ngModel)]="newTweet.message"></textarea>
+		</md-input-container>
+		<button md-button type="submit" [disabled]="submitted"><span *ngIf="!submitted">Send</span><span *ngIf="submitted">Please wait...</span>
+		</button>
+	</form>
+</div>
+
+
+<div class="tweets">
+	<div class="tweet-item" *ngFor="let tweet of tweets|async">
+		<img  class="avatar" [src]="tweet.user.photoURL ? tweet.user.photoURL : 'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&f=y'" alt="{{tweet.user.displayName}}">
+		<div class="tweet-message">
+			<h4> {{tweet.user.displayName}}</h4>
+			<p>
+				{{tweet.message}}
+			</p>
+		</div>
+
+
+	</div>
+</div>
+
+

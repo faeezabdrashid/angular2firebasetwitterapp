@@ -13,15 +13,12 @@ import {AuthProfile} from "./models/auth-profile.model";
 export class AppComponent {
 	title = 'app works!';
 
-
-	items: FirebaseListObservable<any[]>;
-
 	userId: string;
 
 	authProfile: AuthProfile = new AuthProfile();
 
 	constructor(private dialog: MdDialog, private af: AngularFire) {
-		this.items = af.database.list('/tweets');
+
 
 		this.af.auth.subscribe(auth => {
 

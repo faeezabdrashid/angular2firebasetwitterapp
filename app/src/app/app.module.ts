@@ -10,6 +10,7 @@ import {AngularFireModule, AuthProviders, AuthMethods} from 'angularfire2';
 import { LoginComponent } from './users/login/login.component';
 import { RegisterComponent } from './users/register/register.component';
 import { AvatarComponent } from './shared/avatar/avatar.component';
+import { TweetsComponent } from './tweets/tweets/tweets.component';
 
 
 export const firebaseConfig = {
@@ -30,7 +31,8 @@ const fbAuthConfig = {
 		AppComponent,
 		LoginComponent,
 		RegisterComponent,
-		AvatarComponent
+		AvatarComponent,
+		TweetsComponent
 	],
 	entryComponents: [LoginComponent, RegisterComponent],
 	imports: [
