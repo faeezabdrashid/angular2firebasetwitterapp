@@ -1,0 +1,16 @@
+{
+  "rules": {
+    "tweets": {
+      ".read": true,
+      "$tweetId": {
+        ".write": "auth.uid != null && newData.child('userId').val() == auth.uid",
+        "user": {
+          ".validate": "newData.exists() && newData.child('id').val() == auth.uid"
+        },
+        "created": {
+          ".validate": "newData.val() <= now"
+        }
+      }
+    }
+  }
+}

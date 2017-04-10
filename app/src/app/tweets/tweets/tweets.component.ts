@@ -45,7 +45,7 @@ export class TweetsComponent implements OnInit {
 
 	getAuthProfile(auth: any) {
 		if (auth) {
-			this.profile.userId = auth.uid;
+			this.profile.id = auth.uid;
 			this.profile.displayName = auth.auth.displayName;
 			this.profile.photoURL = auth.auth.photoURL;
 			this.profile.email = auth.auth.email;
@@ -67,9 +67,12 @@ export class TweetsComponent implements OnInit {
 
 		if (this.newTweet.message) {
 			this.newTweet.created = firebase.database.ServerValue.TIMESTAMP;
-			this.newTweet.userId = this.userId;
+
+
 			this.newTweet.user = this.profile;
 
+
+			this.newTweet.userId = this.userId ? this.userId : "everyone";
 			console.log("New tweet with object:", this.newTweet);
 
 

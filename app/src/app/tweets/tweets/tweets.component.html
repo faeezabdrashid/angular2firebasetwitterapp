@@ -4,7 +4,7 @@
 		<md-input-container class="full-width">
 			<textarea name="message" mdInput placeholder="What's happening?" [(ngModel)]="newTweet.message"></textarea>
 		</md-input-container>
-		<button md-button type="submit" [disabled]="submitted"><span *ngIf="!submitted">Send</span><span *ngIf="submitted">Please wait...</span>
+		<button md-raised-button type="submit" [disabled]="submitted"><span *ngIf="!submitted">Send</span><span *ngIf="submitted">Please wait...</span>
 		</button>
 	</form>
 </div>
@@ -12,9 +12,10 @@
 
 <div class="tweets">
 	<div class="tweet-item" *ngFor="let tweet of tweets|async">
-		<img  class="avatar" [src]="tweet.user.photoURL ? tweet.user.photoURL : 'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&f=y'" alt="{{tweet.user.displayName}}">
+		<img *ngIf="tweet.user"  class="avatar" [src]="tweet.user.photoURL ? tweet.user.photoURL : 'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&f=y'" alt="{{tweet.user.displayName}}">
+		<img *ngIf="!tweet.user"  class="avatar" [src]="'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&f=y'" />
 		<div class="tweet-message">
-			<h4> {{tweet.user.displayName}}</h4>
+			<h4> {{ tweet.user ? tweet.user.displayName : "Everyone"}}</h4>
 			<p>
 				{{tweet.message}}
 			</p>
